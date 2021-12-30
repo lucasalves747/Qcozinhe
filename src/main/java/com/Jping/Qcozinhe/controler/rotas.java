@@ -4,6 +4,7 @@ import com.Jping.Qcozinhe.model.FindId;
 import com.Jping.Qcozinhe.model.Receitas_db;
 import com.Jping.Qcozinhe.repository.FindId_repository;
 import com.Jping.Qcozinhe.repository.Receita_repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class rotas {
 
+    @Autowired
     FindId_repository repository;
+    @Autowired
     Receita_repository repositorio;
 
     FindId Id = new FindId();
