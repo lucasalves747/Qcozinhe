@@ -54,4 +54,9 @@ public class rotas {
         return repositorio.save(receita);
     }
 
+    @GetMapping(path = "/numero_max")
+    public Integer numero(){
+        return nunero_max;
+    }
+
 }
