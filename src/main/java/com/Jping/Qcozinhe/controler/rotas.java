@@ -35,8 +35,13 @@ public class rotas {
     }
 
     @GetMapping(path = "consulta/nome/{nome}")
-    public Iterable<Receitas_db> consulta_by_nome(@PathVariable("nome") String nome){
+    public ResponseEntity consulta_by_nome(@PathVariable("nome") String nome){
 
+        return repositorio.findById(nome).map(record ->ResponseEntity.ok().body(record))
+                .orElse(ResponseEntity.notFound().build());
+    }
+    @GetMapping(path = "consulta/tudo")
+    public Iterable<Receitas_db> consulta_tudo(){
         return repositorio.findAll();
     }
 
