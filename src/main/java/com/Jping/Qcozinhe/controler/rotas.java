@@ -55,7 +55,7 @@ public class rotas {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return null;
+        return "erroooo";
     }
 
     @GetMapping(path ="salvar/{nome_receita}/{ingredientes}/{modo_preparo}/{nome}")
