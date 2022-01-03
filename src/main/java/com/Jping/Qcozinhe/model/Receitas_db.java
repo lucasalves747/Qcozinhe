@@ -3,14 +3,17 @@ package com.Jping.Qcozinhe.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Receitas_db {
     @Id
     private String nome_receitas;
-    @Column
+    @Lob
+    @Column(length=2147483647)
     private String ingredientes;
-    @Column
+    @Lob
+    @Column(length=2147483647)
     private String modo_preparo;
     @Column
     private String nome;
