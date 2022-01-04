@@ -17,6 +17,16 @@ public class Receitas_db {
     private String modo_preparo;
     @Column
     private String nome;
+    @Column
+    private String nome_img;
+
+    public String getNome_img() {
+        return nome_img;
+    }
+
+    public void setNome_img(String nome_img) {
+        this.nome_img = nome_img;
+    }
 
     public String getNome_receitas() {
         return nome_receitas;
