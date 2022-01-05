@@ -4,9 +4,7 @@ import com.Jping.Qcozinhe.model.Receitas_db;
 import com.Jping.Qcozinhe.repository.Receita_repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -41,8 +39,8 @@ public class rotas {
         return repositorio.findAll();
     }
 
-    @GetMapping(path ="salvar/{nome_receita}/{ingredientes}/{modo_preparo}/{nome}/{nome_img}/{img}")
-    public Receitas_db salvar(@PathVariable("nome_receita") String nome_receita,@PathVariable("ingredientes") String ingredientes,@PathVariable("modo_preparo") String modo_preparo,@PathVariable("nome") String nome ,@PathVariable("img") String img,@PathVariable("nome_img") String nome_img){
+    @PostMapping(path ="salvar")
+    public Receitas_db salvar(@RequestParam("nome_receita") String nome_receita, @RequestParam("ingredientes") String ingredientes, @RequestParam("modo_preparo") String modo_preparo, @RequestParam("nome") String nome , @RequestParam("img") String img, @RequestParam("nome_img") String nome_img){
 
         receita.setNome_receitas(nome_receita);
         receita.setIngredientes(ingredientes);
@@ -60,6 +58,32 @@ public class rotas {
 
         byte[] data = Base64.getDecoder().decode(new String(inputStream.readAllBytes()));
         return data;
+    }
+
+    @GetMapping(path = "/paginaADD")
+    public String pagina_adicionar(){
+        return "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <title>adicionado</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<form action=\"https://qcozinhe.herokuapp.com/salvar\" method=\"post\" enctype=\"multipart/form-data\">\n" +
+                "    <label>selecione a foto:</label>\n" +
+                "    <input type=\"file\" name=\"img\" accept=\".jpg,.gif,.png\">\n" +
+                "    <label>nome da receita:</label>\n" +
+                "    <input type=\"text\" name=\"nome_receita\">\n" +
+                "    <label>ingredientes:</label>\n" +
+                "    <input type=\"text\" name=\"ingredientes\">\n" +
+                "    <label>modo de preparo</label>\n" +
+                "    <input type=\"text\" name=\"modo_preparo\">\n" +
+                "    <label>seu nome</label>\n" +
+                "    <input type=\"text\" name=\"nome\">\n" +
+                "    <input type=\"submit\">\n" +
+                "</form>\n" +
+                "</body>\n" +
+                "</html>";
     }
 
     public static void save_encoda(String nome_img,String img){
