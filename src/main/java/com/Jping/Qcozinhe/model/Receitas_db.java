@@ -7,6 +7,8 @@ import javax.persistence.Lob;
 
 @Entity
 public class Receitas_db {
+    @Column
+    private String nome_img;
     @Id
     private String nome_receitas;
     @Lob
@@ -17,8 +19,7 @@ public class Receitas_db {
     private String modo_preparo;
     @Column
     private String nome;
-    @Column
-    private String nome_img;
+
 
     public String getNome_img() {
         return nome_img;

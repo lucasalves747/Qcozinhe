@@ -38,8 +38,11 @@ public class rotas {
                 .orElse(ResponseEntity.notFound().build());
     }
     @GetMapping(path = "consulta/tudo")
-    public Iterable<Receitas_db> consulta_tudo(){
-        return repositorio.findAll();
+    public String consulta_tudo(){
+        String text = repositorio.findAll().toString();
+
+        String html;
+        return html;
     }
 
     @PostMapping(path ="salvar")
