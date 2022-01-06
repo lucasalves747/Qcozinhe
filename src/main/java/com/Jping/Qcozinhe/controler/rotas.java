@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Base64;
 
 @RestController
@@ -53,11 +56,19 @@ public class rotas {
     }
 
     @GetMapping(path = "consulta/img/{nome_img}")
-    public byte[] consulta_img(@PathVariable("nome_img") String nome_img) throws IOException {
-        FileInputStream inputStream = new FileInputStream(nome_img);
+    public String consulta_img(@PathVariable("nome_img") String nome_img){
+        Path caminho = Paths.get(nome_img);
+        String html = null;
+        try {
+            byte[] texto = Files.readAllBytes(caminho);
+            String leitura = new String(texto);
+            html =" <!DOCTYPE html> <html lang='pt-br'> <head><meta charset='UTF-8'><title>adicionado</title></head><body><img src='data:image/jpeg;base64,"+leitura+"'></body></html>";
 
-        byte[] data = Base64.getDecoder().decode(new String(inputStream.readAllBytes()));
-        return data;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return html;
+
     }
 
 
