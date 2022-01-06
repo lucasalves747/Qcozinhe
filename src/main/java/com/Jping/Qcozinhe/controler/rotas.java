@@ -60,31 +60,6 @@ public class rotas {
         return data;
     }
 
-    @GetMapping(path = "/paginaADD")
-    public String pagina_adicionar(){
-        return "<!DOCTYPE html>\n" +
-                "<html lang=\"en\">\n" +
-                "<head>\n" +
-                "    <meta charset=\"UTF-8\">\n" +
-                "    <title>adicionado</title>\n" +
-                "</head>\n" +
-                "<body>\n" +
-                "<form action=\"https://qcozinhe.herokuapp.com/salvar\" method=\"post\" enctype=\"multipart/form-data\">\n" +
-                "    <label>selecione a foto:</label>\n" +
-                "    <input type=\"file\" name=\"img\" accept=\".jpg,.gif,.png\">\n" +
-                "    <label>nome da receita:</label>\n" +
-                "    <input type=\"text\" name=\"nome_receita\">\n" +
-                "    <label>ingredientes:</label>\n" +
-                "    <input type=\"text\" name=\"ingredientes\">\n" +
-                "    <label>modo de preparo</label>\n" +
-                "    <input type=\"text\" name=\"modo_preparo\">\n" +
-                "    <label>seu nome</label>\n" +
-                "    <input type=\"text\" name=\"nome\">\n" +
-                "    <input type=\"submit\">\n" +
-                "</form>\n" +
-                "</body>\n" +
-                "</html>";
-    }
 
     public static void save_encoda(String nome_img,String img){
         FileWriter fileWriter= null;
