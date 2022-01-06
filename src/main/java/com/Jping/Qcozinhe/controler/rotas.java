@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Base64;
 
 @RestController
 public class rotas {
@@ -38,11 +36,9 @@ public class rotas {
                 .orElse(ResponseEntity.notFound().build());
     }
     @GetMapping(path = "consulta/tudo")
-    public String consulta_tudo(){
-        String text = repositorio.findAll().toString();
+    public Iterable<Receitas_db> consulta_tudo(){
 
-        String html;
-        return html;
+        return repositorio.findAll();
     }
 
     @PostMapping(path ="salvar")
