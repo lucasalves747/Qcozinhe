@@ -39,7 +39,7 @@ public class rotas {
     @GetMapping(path = "consulta/tudo")
     public String consulta_tudo(){
         Iterable<Receitas_db> frase = repositorio.findAll();
-        String frases = frase.toString();
+        String frases = ""+frase;
         ReplaceString replaceString = new ReplaceString();
 
 
