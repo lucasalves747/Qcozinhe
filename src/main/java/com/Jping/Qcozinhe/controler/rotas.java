@@ -38,12 +38,12 @@ public class rotas {
     }
     @GetMapping(path = "consulta/tudo")
     public String consulta_tudo(){
-        String frase = repositorio.findAll().toString();
-
+        Iterable<Receitas_db> frase = repositorio.findAll();
+        String frases = frase.toString();
         ReplaceString replaceString = new ReplaceString();
 
 
-        return replaceString.replace(frase);
+        return replaceString.replace(frases);
     }
 
     @PostMapping(path ="salvar")
