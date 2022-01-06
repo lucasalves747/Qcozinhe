@@ -1,5 +1,6 @@
 package com.Jping.Qcozinhe.controler;
 
+import com.Jping.Qcozinhe.Refatorando.ReplaceString;
 import com.Jping.Qcozinhe.model.Receitas_db;
 import com.Jping.Qcozinhe.repository.Receita_repository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +37,13 @@ public class rotas {
                 .orElse(ResponseEntity.notFound().build());
     }
     @GetMapping(path = "consulta/tudo")
-    public Iterable<Receitas_db> consulta_tudo(){
+    public String consulta_tudo(){
+        String frase = repositorio.findAll().toString();
 
-        return repositorio.findAll();
+        ReplaceString replaceString = new ReplaceString();
+
+
+        return replaceString.replace(frase);
     }
 
     @PostMapping(path ="salvar")
