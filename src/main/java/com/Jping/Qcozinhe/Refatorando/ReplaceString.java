@@ -22,6 +22,7 @@ public class ReplaceString {
     public String spliting(String text){
         String texto = replace(text);
         String[] texto1 = texto.split("#=");
+        String nomeImage="";
         int numero = 0;
         for(int i = 0; i < texto.length();i++){
             if(texto.charAt(i)== '#' && texto.charAt(i+1) == '='){
@@ -29,8 +30,15 @@ public class ReplaceString {
             }
         }
 
+        numero = numero/2;
+        for(int i = 0;i<numero;i++){
+            if((i%2) == 0){
+                nomeImage =nomeImage+" "+texto1[i];
+            }
+        }
 
-        return texto1[3]+"   "+texto.length() +"   numero: "+numero;
+
+        return nomeImage+"   "+texto.length() +"   numero: "+numero;
 
     }
 
