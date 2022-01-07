@@ -17,6 +17,6 @@ public class ReplaceString {
 
 
 
-        return text7;
+        return text10;
     }
 }
