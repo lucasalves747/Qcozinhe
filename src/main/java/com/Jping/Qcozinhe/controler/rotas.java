@@ -1,5 +1,6 @@
 package com.Jping.Qcozinhe.controler;
 
+import com.Jping.Qcozinhe.Jhtml.Jhtml;
 import com.Jping.Qcozinhe.Refatorando.ReplaceString;
 import com.Jping.Qcozinhe.model.Receitas_db;
 import com.Jping.Qcozinhe.repository.Receita_repository;
@@ -45,11 +46,8 @@ public class rotas {
 
     @GetMapping(path = "/consulta/tudo")
     public String consultaTudo(){
-        Requisiçao requisiçao = new Requisiçao();
-        ReplaceString replaceString = new ReplaceString();
-
-        String text = requisiçao.request();
-        return replaceString.replace(text);
+        Jhtml jhtml = new Jhtml();
+        return jhtml.html();
 
     }
 
