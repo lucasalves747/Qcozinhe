@@ -9,7 +9,8 @@ public class Jhtml {
         ReplaceString replaceString = new ReplaceString();
 
         String text = requisiçao.request();
-        String Html = replaceString.spliting(text);
+        String Html = replaceString.replace(text);
+        String nomeImages = replaceString.nomeImage(text);
         return "<!DOCTYPE html>\n" +
                 "<html lang='pt-br'>\n" +
                 "<head>\n" +
@@ -17,7 +18,7 @@ public class Jhtml {
                 "    <title>home</title>\n" +
                 "\n" +
                 "</head>\n" +
-                "<body>\n" +Html+ "</body>\n" +
+                "<body>\n" +Html+ " <br><br>"+nomeImages+"</body>\n" +
                 "</html>";
     }
 }

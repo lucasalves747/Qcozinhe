@@ -2,7 +2,7 @@ package com.Jping.Qcozinhe.Refatorando;
 
 public class ReplaceString {
 
-    public static String replace(String frase) {
+    public  String replace(String frase) {
         String text = frase.replace("{", "");
         String text1 = text.replace("}", "");
         String text2 = text1.replace(":", "");
@@ -19,7 +19,7 @@ public class ReplaceString {
 
         return text11;
     }
-    public String spliting(String text){
+    public String nomeImage(String text){
         String texto = replace(text);
         String[] texto1 = texto.split("#=");
         String nomeImage="";
@@ -38,7 +38,7 @@ public class ReplaceString {
         }
 
 
-        return nomeImage+"   "+texto.length() +"   numero: "+numero;
+        return nomeImage;
 
     }
 
