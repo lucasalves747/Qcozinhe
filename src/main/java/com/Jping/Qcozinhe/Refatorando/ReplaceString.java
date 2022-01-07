@@ -27,7 +27,7 @@ public class ReplaceString {
             String[] texto2 = texto1[i].split("<br><br><br>-----------------------------------");
             nomes_img = nomes_img+texto2[i];
         }
-        return nomes_img;
+        return nomes_img+" numero:"+numeroOcorrncia;
 
     }
 
