@@ -22,11 +22,15 @@ public class ReplaceString {
     public String spliting(String text){
         String texto = replace(text);
         String[] texto1 = texto.split("#=");
+        int numero = 0;
+        for(int i = 0; i < texto.length();i++){
+            if(texto.charAt(i)== '#' && texto.charAt(i+1) == '='){
+                numero = numero+1;
+            }
+        }
 
 
-
-
-        return texto1[3]+"   "+texto.length() ;
+        return texto1[3]+"   "+texto.length() +"   numero: "+numero;
 
     }
 
