@@ -21,7 +21,7 @@ public class ReplaceString {
     public String spliting(String text){
         String texto = replace(text);
         int numeroOcorrncia = numeroOcorrencia(texto,"<br><br><br>-----------------------------------<br><br><h2>NOME");
-        String[] texto1 = texto.split("");
+        String[] texto1 = texto.split("nome img");
         String nomes_img = "";
         for(int i = 0;i <numeroOcorrncia;i++) {
             String[] texto2 = texto1[i].split("<br><br><br>-----------------------------------");
