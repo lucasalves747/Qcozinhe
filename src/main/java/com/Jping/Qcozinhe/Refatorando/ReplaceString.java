@@ -21,12 +21,12 @@ public class ReplaceString {
     }
     public String spliting(String text){
         String texto = replace(text);
-
         String[] texto1 = texto.split("#=");
 
 
 
-        return texto1[i];
+
+        return texto1[4] ;
 
     }
 
