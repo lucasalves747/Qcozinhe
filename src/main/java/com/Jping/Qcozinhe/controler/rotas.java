@@ -1,11 +1,14 @@
 package com.Jping.Qcozinhe.controler;
 
+import com.Jping.Qcozinhe.Refatorando.ReplaceString;
 import com.Jping.Qcozinhe.model.Receitas_db;
 import com.Jping.Qcozinhe.repository.Receita_repository;
+import com.Jping.Qcozinhe.request.Requisiçao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.management.modelmbean.RequiredModelMBean;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -35,11 +38,19 @@ public class rotas {
         return repositorio.findById(nome).map(record ->ResponseEntity.ok().body(record))
                 .orElse(ResponseEntity.notFound().build());
     }
-    @GetMapping(path = "consulta/tudo")
-    public Iterable<Receitas_db> consulta_tudo(){
-
-
+    @GetMapping(path = "dadosCru/tudo")
+    public Iterable<Receitas_db> consulta_cru(){
         return repositorio.findAll();
+    }
+
+    @GetMapping(path = "/consulta/tudo")
+    public String consultaTudo(){
+        Requisiçao requisiçao = new Requisiçao();
+        ReplaceString replaceString = new ReplaceString();
+
+        String text = requisiçao.request();
+        return replaceString.replace(text);
+
     }
 
     @PostMapping(path ="salvar")
