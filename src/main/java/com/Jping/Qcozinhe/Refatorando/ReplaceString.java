@@ -20,7 +20,7 @@ public class ReplaceString {
     }
     public String spliting(String text){
         String texto = replace(text);
-        int numeroOcorrncia = numeroOcorrencia(texto,"<br><br><br>-----------------------------------<br><br><h2>NOME");
+        int numeroOcorrncia = numeroOcorrencia(texto,'#','=');
         String[] texto1 = texto.split("nome img");
         String nomes_img = "";
         for(int i = 0;i <numeroOcorrncia;i++) {
@@ -32,11 +32,11 @@ public class ReplaceString {
     }
 
 
-    public Integer numeroOcorrencia(String s,String  c){
+    public Integer numeroOcorrencia(String s,Character  c,Character c2){
         int tamanho = s.length();
         Integer ocorrencias = 0;
         for(int i = 0 ;i<tamanho;i++){
-            if(s.equals(c)){
+            if(s.charAt(i) == c && s.charAt(i+1) == c2){
                 ocorrencias++;
             }
         }
