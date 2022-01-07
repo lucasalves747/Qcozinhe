@@ -6,7 +6,7 @@ public class ReplaceString {
         String text = frase.replace("{", "");
         String text1 = text.replace("}", "");
         String text2 = text1.replace(":", "");
-        String text3 = text2.replace("nome_receitas", "<br><br><br>-----------------------------------<br><br><h2>NOME DA RECEITA</h2>");
+        String text3 = text2.replace("nome_receitas", " <br><br><br>-----------------------------------<br><br><h2>NOME DA RECEITA</h2>");
         String text4 = text3.replace("ingredientes", "<h2>INGREDIENTES</h2>");
         String text5 = text4.replace("modo_preparo", "<h2>MODO DE PREPARO</h2>");
         //String text6 = text5.replace("nome", "<h2>NOME</h2>");
@@ -20,8 +20,8 @@ public class ReplaceString {
     }
     public String spliting(String text){
         String texto = replace(text);
-        int numeroOcorrncia = numeroOcorrencia(texto,"nome img");
-        String[] texto1 = texto.split("nome img");
+        int numeroOcorrncia = numeroOcorrencia(texto,"<br><br><br>-----------------------------------<br><br><h2>NOME");
+        String[] texto1 = texto.split("");
         String nomes_img = "";
         for(int i = 0;i <numeroOcorrncia;i++) {
             String[] texto2 = texto1[i].split("<br><br><br>-----------------------------------");
