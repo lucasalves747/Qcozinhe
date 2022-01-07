@@ -14,9 +14,10 @@ public class ReplaceString {
         String text8 = text7.replace("_", " ");
         String text9 = text8.replace("[", "");
         String text10 = text9.replace("]", "");
+        String text11 = text10.replace("nome_img", "#=");
 
 
-        return text10;
+        return text11;
     }
     public String spliting(String text){
         String texto = replace(text);
@@ -34,7 +35,7 @@ public class ReplaceString {
 
     public Integer numeroOcorrencia(String s,Character  c,Character c2){
         int tamanho = s.length();
-        Integer ocorrencias = 0;
+        int ocorrencias = 0;
         for(int i = 0 ;i<tamanho;i++){
             if(s.charAt(i) == c && s.charAt(i+1) == c2){
                 ocorrencias++;
