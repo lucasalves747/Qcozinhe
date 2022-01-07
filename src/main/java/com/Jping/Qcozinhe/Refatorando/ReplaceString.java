@@ -6,7 +6,7 @@ public class ReplaceString {
 
         String text = frase.replace("{", "");
         String text1 = text.replace("}", "");
-        String texta2 = text1.replace("nome img", "#=");
+        String texta2 = text1.replace("nome_img", "#=");
         String text2 = texta2.replace(":", "");
         String text3 = text2.replace("nome_receitas", "#=  <br><br><br>-----------------------------------<br><br><h2>NOME DA RECEITA</h2>");
         String text4 = text3.replace("ingredientes", "<h2>INGREDIENTES</h2>");
