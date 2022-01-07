@@ -9,7 +9,7 @@ public class Jhtml {
         ReplaceString replaceString = new ReplaceString();
 
         String text = requisiçao.request();
-        String Html = replaceString.replace(text);
+        String Html = replaceString.spliting(text);
         return "<!DOCTYPE html>\n" +
                 "<html lang='pt-br'>\n" +
                 "<head>\n" +
