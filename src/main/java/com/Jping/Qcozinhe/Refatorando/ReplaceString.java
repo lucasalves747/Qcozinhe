@@ -32,7 +32,7 @@ public class ReplaceString {
 
         numero = numero/2;
         for(int i = 0;i<numero;i++){
-            if((i%2) == 0){
+            if((i%2) != 0){
                 nomeImage =nomeImage+" "+texto1[i];
             }
         }
