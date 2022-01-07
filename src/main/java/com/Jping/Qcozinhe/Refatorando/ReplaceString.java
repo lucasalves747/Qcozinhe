@@ -21,26 +21,13 @@ public class ReplaceString {
     }
     public String spliting(String text){
         String texto = replace(text);
-        int numeroOcorrncia = numeroOcorrencia(texto,'#','=');
+
         String[] texto1 = texto.split("nome img");
-        String nomes_img = "";
-        for(int i = 0;i <numeroOcorrncia;i++) {
-            String[] texto2 = texto1[i].split("<br><br><br>-----------------------------------");
-            nomes_img = nomes_img+texto2[i];
-        }
-        return nomes_img+" numero:"+numeroOcorrncia;
+
+
+        return texto1[0];
 
     }
 
 
-    public Integer numeroOcorrencia(String s,Character  c,Character c2){
-        int tamanho = s.length();
-        int ocorrencias = 0;
-        for(int i = 0 ;i<tamanho;i++){
-            if(s.charAt(i) == c && s.charAt(i+1) == c2){
-                ocorrencias++;
-            }
-        }
-        return ocorrencias;
-    }
 }
