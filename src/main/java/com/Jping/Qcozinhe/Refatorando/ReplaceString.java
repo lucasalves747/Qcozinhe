@@ -26,9 +26,8 @@ public class ReplaceString {
 
 
 
-        return texto1[3] ;
+        return texto1[3]+"   "+texto.length() ;
 
     }
-
 
 }
