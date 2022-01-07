@@ -2,7 +2,7 @@ package com.Jping.Qcozinhe.Refatorando;
 
 public class ReplaceString {
 
-    public String replace(String frase) {
+    public static String replace(String frase) {
         String text = frase.replace("{", "");
         String text1 = text.replace("}", "");
         String text2 = text1.replace(":", "");
@@ -19,7 +19,27 @@ public class ReplaceString {
         return text10;
     }
     public String spliting(String text){
-        return "null";
+        String texto = replace(text);
+        int numeroOcorrncia = numeroOcorrencia(texto,"nome img");
+        String[] texto1 = texto.split("nome img");
+        String nomes_img = "";
+        for(int i = 0;i <numeroOcorrncia;i++) {
+            String[] texto2 = texto1[i].split("<br><br><br>-----------------------------------");
+            nomes_img = nomes_img+texto2[i];
+        }
+        return nomes_img;
 
+    }
+
+
+    public Integer numeroOcorrencia(String s,String  c){
+        int tamanho = s.length();
+        Integer ocorrencias = 0;
+        for(int i = 0 ;i<tamanho;i++){
+            if(s.equals(c)){
+                ocorrencias++;
+            }
+        }
+        return ocorrencias;
     }
 }
