@@ -29,7 +29,7 @@ public class Jhtml {
     public static String replaceNomeImg(String tagHtml,String nome){
 
         String[] nome_img = nome.split(",");
-        Path caminho = Paths.get(nome_img[6]);
+        Path caminho = Paths.get(nome_img[15]);
 
         try {
             byte[] texto = Files.readAllBytes(caminho);
