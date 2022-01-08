@@ -23,14 +23,14 @@ public class Jhtml {
                 "    <title>home</title>\n" +
                 "\n" +
                 "</head>\n" +
-                "<body>\n" +Html+ " <br><br>"+nomeImages+"</body>\n" +
+                "<body>\n" +replaceNomeImg(Html,nomeImages) +"</body>\n" +
                 "</html>";
     }
     public static String replaceNomeImg(String tagHtml,String nome){
 
         String[] nome_img = nome.split(",");
-        Path caminho = Paths.get(nome_img[0]);
-        String html = null;
+        Path caminho = Paths.get(nome_img[6]);
+
         try {
             byte[] texto = Files.readAllBytes(caminho);
             String leitura = new String(texto);
@@ -39,7 +39,7 @@ public class Jhtml {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "";
+        return tagHtml;
     }
 }
 
