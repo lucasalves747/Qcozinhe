@@ -1,15 +1,13 @@
 package com.Jping.Qcozinhe.controler;
 
-import com.Jping.Qcozinhe.Jhtml.Jhtml;
-import com.Jping.Qcozinhe.Refatorando.ReplaceString;
+
 import com.Jping.Qcozinhe.model.Receitas_db;
 import com.Jping.Qcozinhe.repository.Receita_repository;
-import com.Jping.Qcozinhe.request.Requisiçao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.management.modelmbean.RequiredModelMBean;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
