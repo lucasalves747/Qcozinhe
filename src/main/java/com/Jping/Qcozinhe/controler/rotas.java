@@ -39,17 +39,11 @@ public class rotas {
         return repositorio.findById(nome).map(record ->ResponseEntity.ok().body(record))
                 .orElse(ResponseEntity.notFound().build());
     }
-    @GetMapping(path = "dadosCru/tudo")
+    @GetMapping(path = "consulta/tudo")
     public Iterable<Receitas_db> consulta_cru(){
         return repositorio.findAll();
     }
 
-    @GetMapping(path = "/consulta/tudo")
-    public String consultaTudo(){
-        Jhtml jhtml = new Jhtml();
-        return jhtml.html();
-
-    }
 
     @PostMapping(path ="salvar")
     public Receitas_db salvar(@RequestParam("nome_receita") String nome_receita, @RequestParam("ingredientes") String ingredientes, @RequestParam("modo_preparo") String modo_preparo, @RequestParam("nome") String nome , @RequestParam("img") String img, @RequestParam("nome_img") String nome_img){
