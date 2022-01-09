@@ -72,6 +72,19 @@ public class rotas {
 
     }
 
+    @GetMapping(path = "/split/{numero}/{text}")
+    public String SplitNumeImage(@PathVariable("numero") Integer numero,@PathVariable("text") String text){
+
+        String[] Nome_text = text.split("#=");
+        String aux = Nome_text[numero];
+        return aux;
+    }
+    @GetMapping(path = "/temanhoArray/{text}")
+    public Integer tamanho_arry(@PathVariable("text") String text){
+        String[] aux = text.split("#=");
+        return aux.length;
+    }
+
 
     public static void save_encoda(String nome_img,String img){
         FileWriter fileWriter= null;
