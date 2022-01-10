@@ -79,7 +79,7 @@ public class rotas {
         String aux = Nome_text[numero];
         return aux;
     }
-    @GetMapping(path = "/temanhoArray/{text}")
+    @GetMapping(path = "/tamanhoArray/{text}")
     public Integer tamanho_arry(@PathVariable("text") String text){
         String[] aux = text.split("::::");
         return aux.length;
