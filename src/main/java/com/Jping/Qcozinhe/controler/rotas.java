@@ -63,7 +63,7 @@ public class rotas {
         try {
             byte[] texto = Files.readAllBytes(caminho);
             String leitura = new String(texto);
-            html =" <!DOCTYPE html> <html lang='pt-br'> <head><meta charset='UTF-8'><title>adicionado</title></head><body><img src='data:image/jpeg;base64,"+leitura+"'></body></html>";
+            html =" <!DOCTYPE html> <html lang='pt-br'> <head><meta charset='UTF-8'><title>adicionado</title></head><body><img style='width: 100px;height: 100px;' src='data:image/jpeg;base64,"+leitura+"'></body></html>";
 
         } catch (Exception e) {
             e.printStackTrace();
